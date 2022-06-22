@@ -14,11 +14,19 @@ body{
 $greyColor: #0f0f0f;
 $grey_whiteColor: #1F1F1F;
 
-h2,h3{
+h2,h3,h5{
     font-family: 'Playfair Display', serif;
 }
 h2{
     font-weight: 700;
+}
+.line{
+    max-width: 120px;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background-color: #fff;
+    margin: 50px auto;
 }
 [class*=__container]{
     max-width: 1230px;
@@ -39,6 +47,7 @@ button{
     z-index: 99999999;
     position: relative;
     width: 22px;
+    display: none;
     height: 16px;
     span ,&::after ,&::before{
         position: absolute;
@@ -112,7 +121,7 @@ button{
                     width: 14px;
                 }
             }
-            .line{
+            .vertical-line{
                 position: relative;
                 &::before{
                     position: absolute;
@@ -186,12 +195,6 @@ button{
         display: flex;
         column-gap: 40px;
         align-items: center;
-        .header-btn__item {
-        }
-        .cart {
-        }
-        .search {
-        }
         img{
             height: 22px;
             width: 22px;
@@ -213,6 +216,10 @@ button{
 @media (max-width: 650px) {
     .nav{
         display: none;
+        box-sizing: border-box;
+    }
+    .burger-menu{
+        display: block;
     }
     .header.active{
         flex-direction: column-reverse;
@@ -233,7 +240,7 @@ button{
                 flex-direction: column-reverse;
                 row-gap: 10px;
             }
-            .line{
+            .vertical-line{
                 &::before{
                     display: none;
                 }
@@ -258,9 +265,12 @@ button{
         nav{
             position: absolute;
             width: 100vw;
-            top: 0;
+            top: 45px;
+            overflow-y:auto;
             left: 0;
-            height: 100vh;
+            padding-top: 50px;
+            height: calc(100vh - 100px);
+            padding-bottom: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -274,11 +284,10 @@ button{
                 }
             }
         }
-
     }
     .header-main{
         position: relative;
-        padding: 20px 10px;
+        padding: 20px 0px;
         &__container{
             justify-content: space-between;
         }
@@ -299,7 +308,146 @@ button{
     }
     
 }
+@media (max-width: 450px) {
+    .header-main{
+        padding: 10px 0px;
+    }
+}
 
+//first-section
 
+.porten{
+    background: url(image/firts-section-img.png) center no-repeat;
+    background-size: cover;
+    padding: 150px 0px;
+    *{
+        margin: auto;
+    }
+    &__box{
+        padding: 90px 60px;
+        border: 3px solid #fff;
+        max-width: 310px;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 400;
+        *{
+            margin: auto;
+        }
+        img{
+            max-width: 185px;
+            width: 100%;
+        }
+        .line{
+            max-width: 100%;
+            margin: 5px 0px;
+        }
+    }
+    &__text{
+        margin-top: 80px;
+        max-width: 720px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    @media (max-width: 540px) {
+        &{
+            padding: 100px 0px;
+        }
+    }
+}
 
+/*  season2020  ...*/
 
+.season2020{
+    background: #000;
+    &__container{
+        max-width: 1900px;
+        display: flex;
+        padding: 0px;
+    }
+    
+
+}
+.new-colection{
+    min-width: 500px;
+    background: url(image/second-section.png) no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    flex: 1 1 auto;
+    position: relative;
+    &__contant{
+        position: absolute;
+        text-align: center;
+        bottom: 100px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 35px;
+    }
+    .line{
+        margin: 30px auto;
+    }
+    .catalog{
+        &__link{
+            border: 1px solid #FFFFFF;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 12px 20px;
+        }
+    }
+}
+.season{
+    padding: 90px 80px;
+    &__title,h2{
+        text-align: center;
+        font-size: 35px;
+        .line{
+            
+        }
+    }
+    
+}
+.carts{
+    flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+    max-width: 880px;
+    justify-content: start;
+    &__item{
+        &__img{
+            padding: 50px 20px;
+            background-color: $grey_whiteColor;
+        }
+        &__title{
+            padding: 25px 0px 10px 0px;
+        }
+    }
+}
+@media (max-width: 1500px) {
+    .season{
+        padding: 60px 30px;
+    }
+    .carts__item__img{
+        padding: 30px 5px;
+    }
+}
+@media (max-width: 1320px) {
+    .season{
+        padding: 60px 30px;
+    }
+    .carts__item__img{
+        padding: 30px 5px;
+    }
+    .season2020__container{
+        flex-direction: column
+    }
+    .carts{
+        max-width: 100%;
+        justify-content: center;
+    }
+    .new-colection{
+        min-width: 0px;
+    }
+}
