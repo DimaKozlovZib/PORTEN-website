@@ -55,7 +55,9 @@ a.btn {
 }
 
 .btn-box {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   border: 1px solid #FFFFFF;
   text-align: center;
   padding: 12px 20px;
@@ -519,6 +521,7 @@ a.btn {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+  row-gap: 40px;
   max-width: 880px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -639,5 +642,21 @@ a.btn {
   .colection2018__image {
     min-height: 400px;
   }
+}
+
+.new-goods {
+  padding: 120px 0px;
+  background: #000;
+}
+
+.new-goods .carts {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100%;
+}
+
+.new-goods .carts__item__img {
+  padding: 50px 20px;
 }
 /*# sourceMappingURL=index.css.map */
