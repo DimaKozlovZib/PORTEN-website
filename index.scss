@@ -533,3 +533,27 @@ a.btn{
         }
     }
 }
+
+
+.brands{
+    padding: 60px 0px;
+    background-color: $grey_whiteColor;
+    .line{
+        margin: 30px auto;
+    }
+    &__items-box{
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        &__item{
+            display: flex;
+            flex:  1 1 250px;
+            img{
+                margin: auto;
+                max-width: 100%;
+            }
+        }
+
+    }
+}
